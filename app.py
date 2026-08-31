@@ -702,7 +702,7 @@ def render_forecast_page() -> None:
         )
 
     st.caption(
-        "Research prototype only. Forecasts do not guarantee future prices and are not investment advice."
+        ""
     )
 
 
