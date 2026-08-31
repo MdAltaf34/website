@@ -4,14 +4,10 @@ This package is deployment-ready for Streamlit Community Cloud.
 
 ## URLs after deployment
 
-If the app URL is:
 
-`https://dse-forecast.streamlit.app`
 
-then:
-
-- Public forecast page: `https://dse-forecast.streamlit.app/`
-- Private administrator page: `https://dse-forecast.streamlit.app/admin`
+- Public forecast page: `https://dse-forecasting-site.streamlit.app/`
+- Private administrator page: `https://dse-forecasting-site.streamlit.app/admin`
 
 The administrator page is hidden from the public navigation and is also protected by `ADMIN_PASSWORD`.
 
@@ -44,17 +40,6 @@ input_bundle.zip
 
 Ticker aliases DSEX/00DSEX, DS30/00DS30, and DSES/00DSES are supported by the pipeline.
 
-## Permanent saved result after the first computation
-
-Streamlit Community Cloud's runtime filesystem is not permanent. After the first successful computation:
-
-1. On `/admin`, click **Download newly generated app_data.zip**.
-2. Extract the downloaded ZIP.
-3. Put the generated files in this repository under `data/app_data/`.
-4. Commit and push those files to GitHub.
-
-After Streamlit redeploys, the public website will load the saved results immediately. You do **not** need to upload inputs or rerun the models every time the app starts. The `/admin` page can remain available only when a future recomputation is needed.
-
 Typical saved files are:
 
 ```text
@@ -79,22 +64,10 @@ data/app_data/
 └── BXPHARMA_forecast.csv
 ```
 
-## Streamlit Cloud deployment
-
-1. Extract this ZIP.
-2. Create a GitHub repository and upload the extracted project files so `app.py` is at the repository root.
-3. Open Streamlit Community Cloud and create a new app from that repository.
-4. Use branch `main` and main file `app.py`.
-5. In Advanced settings, select **Python 3.12**.
-6. Add this secret:
 
 ```toml
-ADMIN_PASSWORD = "your-private-password"
+ADMIN_PASSWORD = "123456"
 ```
-
-7. Deploy.
-
-Do not commit your real administrator password to GitHub.
 
 ## Local run
 
